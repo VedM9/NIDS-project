@@ -1,0 +1,19 @@
+# Trained model artifacts (rf_model.pkl is ~116 MB, over GitHub's 100 MB limit).
+# Regenerate by running train_random_forest.py
+*.pkl
+
+# CICIDS2017 dataset -- too large, download separately (see README)
+MachineLearningCSV/
+MachineLearningCVE/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
