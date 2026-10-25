@@ -1,0 +1,75 @@
+{
+  "model": "CNN unweighted",
+  "macro_f1": 0.8385768207276825,
+  "benign_false_positive_rate": 0.017586579441302944,
+  "attack_detection_rate": 0.9616497318656506,
+  "accuracy": 0.9787380856544041,
+  "per_class": {
+    "BENIGN": {
+      "precision": 0.9921456510848202,
+      "recall": 0.9824134205586971,
+      "f1-score": 0.9872555516542617,
+      "support": 419297.0
+    },
+    "Bot": {
+      "precision": 0.9602649006622517,
+      "recall": 0.3717948717948718,
+      "f1-score": 0.5360443622920518,
+      "support": 390.0
+    },
+    "DDoS": {
+      "precision": 0.9981377288216182,
+      "recall": 0.98390813576534,
+      "f1-score": 0.9909718534253851,
+      "support": 25603.0
+    },
+    "DoS GoldenEye": {
+      "precision": 0.9703018500486855,
+      "recall": 0.968886728245017,
+      "f1-score": 0.9695937728046704,
+      "support": 2057.0
+    },
+    "DoS Hulk": {
+      "precision": 0.9757819481680071,
+      "recall": 0.9475556841191785,
+      "f1-score": 0.961461696507191,
+      "support": 34570.0
+    },
+    "DoS Slowhttptest": {
+      "precision": 0.8708452041785375,
+      "recall": 0.8766730401529637,
+      "f1-score": 0.873749404478323,
+      "support": 1046.0
+    },
+    "DoS slowloris": {
+      "precision": 0.9248452696728559,
+      "recall": 0.9712163416898792,
+      "f1-score": 0.947463768115942,
+      "support": 1077.0
+    },
+    "FTP-Patator": {
+      "precision": 0.9931448157669237,
+      "recall": 0.9764111204717776,
+      "f1-score": 0.9847068819031436,
+      "support": 1187.0
+    },
+    "PortScan": {
+      "precision": 0.7390332726369806,
+      "recall": 0.9831534904206122,
+      "f1-score": 0.8437913437913438,
+      "support": 18164.0
+    },
+    "SSH-Patator": {
+      "precision": 1.0,
+      "recall": 0.9145962732919255,
+      "f1-score": 0.9553933495539335,
+      "support": 644.0
+    },
+    "Web Attack - Brute Force": {
+      "precision": 1.0,
+      "recall": 0.09523809523809523,
+      "f1-score": 0.17391304347826086,
+      "support": 294.0
+    }
+  }
+}

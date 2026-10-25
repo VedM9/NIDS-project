@@ -1,0 +1,12 @@
+,pred: BENIGN,pred: Bot,pred: DDoS,pred: DoS GoldenEye,pred: DoS Hulk,pred: DoS Slowhttptest,pred: DoS slowloris,pred: FTP-Patator,pred: PortScan,pred: SSH-Patator,pred: Web Attack - Brute Force
+true: BENIGN,419256,7,1,1,22,4,0,0,1,0,3
+true: Bot,386,4,0,0,0,0,0,0,0,0,0
+true: DDoS,69,0,25534,0,0,0,0,0,0,0,0
+true: DoS GoldenEye,3,0,0,2049,0,5,0,0,0,0,0
+true: DoS Hulk,2779,0,8,126,31022,0,0,0,634,0,0
+true: DoS Slowhttptest,8,0,0,0,0,1032,4,0,0,0,1
+true: DoS slowloris,123,0,0,0,0,241,713,0,0,0,0
+true: FTP-Patator,15,0,0,0,0,0,0,1171,0,0,0
+true: PortScan,67,0,0,0,0,0,0,0,18093,0,3
+true: SSH-Patator,29,0,0,0,5,0,0,0,0,609,0
+true: Web Attack - Brute Force,4,0,0,0,0,0,0,0,0,0,290

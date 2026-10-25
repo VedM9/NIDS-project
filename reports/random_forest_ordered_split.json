@@ -1,0 +1,75 @@
+{
+  "model": "Random Forest (ordered split)",
+  "macro_f1": 0.8671355095901544,
+  "benign_false_positive_rate": 9.301327227846743e-05,
+  "attack_detection_rate": 0.9590365413339292,
+  "accuracy": 0.990979969146696,
+  "per_class": {
+    "BENIGN": {
+      "precision": 0.9917608737305997,
+      "recall": 0.9999069867277215,
+      "f1-score": 0.9958172710365615,
+      "support": 419295.0
+    },
+    "Bot": {
+      "precision": 0.36363636363636365,
+      "recall": 0.010256410256410256,
+      "f1-score": 0.0199501246882793,
+      "support": 390.0
+    },
+    "DDoS": {
+      "precision": 0.9996476529773324,
+      "recall": 0.9973050033199234,
+      "f1-score": 0.9984749540531029,
+      "support": 25603.0
+    },
+    "DoS GoldenEye": {
+      "precision": 0.9416360294117647,
+      "recall": 0.9961108410306271,
+      "f1-score": 0.9681077250177179,
+      "support": 2057.0
+    },
+    "DoS Hulk": {
+      "precision": 0.9991304067763858,
+      "recall": 0.8973936185599815,
+      "f1-score": 0.9455332378310829,
+      "support": 34569.0
+    },
+    "DoS Slowhttptest": {
+      "precision": 0.8049921996879875,
+      "recall": 0.9875598086124402,
+      "f1-score": 0.8869789428448647,
+      "support": 1045.0
+    },
+    "DoS slowloris": {
+      "precision": 0.9944211994421199,
+      "recall": 0.6620241411327762,
+      "f1-score": 0.7948717948717948,
+      "support": 1077.0
+    },
+    "FTP-Patator": {
+      "precision": 1.0,
+      "recall": 0.9873524451939292,
+      "f1-score": 0.9936359779380568,
+      "support": 1186.0
+    },
+    "PortScan": {
+      "precision": 0.9660935497650577,
+      "recall": 0.9961460111215108,
+      "f1-score": 0.9808896478815972,
+      "support": 18163.0
+    },
+    "SSH-Patator": {
+      "precision": 1.0,
+      "recall": 0.9471228615863142,
+      "f1-score": 0.9728434504792333,
+      "support": 643.0
+    },
+    "Web Attack - Brute Force": {
+      "precision": 0.9764309764309764,
+      "recall": 0.9863945578231292,
+      "f1-score": 0.9813874788494078,
+      "support": 294.0
+    }
+  }
+}

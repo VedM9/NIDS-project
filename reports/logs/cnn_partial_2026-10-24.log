@@ -1,0 +1,36 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792833244.236254   63408 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792833250.447909   63408 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792833292.369325   63408 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/20
+3547/3547 - 83s - 23ms/step - accuracy: 0.9779 - loss: 0.0545 - val_accuracy: 0.9787 - val_loss: 0.0429
+Epoch 2/20
+3547/3547 - 76s - 22ms/step - accuracy: 0.9829 - loss: 0.0378 - val_accuracy: 0.9778 - val_loss: 0.0564
+Epoch 3/20
+3547/3547 - 79s - 22ms/step - accuracy: 0.9848 - loss: 0.0332 - val_accuracy: 0.9743 - val_loss: 0.0763
+
+--- CNN unweighted ---
+                          precision    recall  f1-score   support
+
+                  BENIGN      0.992     0.982     0.987    419297
+                     Bot      0.960     0.372     0.536       390
+                    DDoS      0.998     0.984     0.991     25603
+           DoS GoldenEye      0.970     0.969     0.970      2057
+                DoS Hulk      0.976     0.948     0.961     34570
+        DoS Slowhttptest      0.871     0.877     0.874      1046
+           DoS slowloris      0.925     0.971     0.947      1077
+             FTP-Patator      0.993     0.976     0.985      1187
+                PortScan      0.739     0.983     0.844     18164
+             SSH-Patator      1.000     0.915     0.955       644
+Web Attack - Brute Force      1.000     0.095     0.174       294
+
+                accuracy                          0.979    504329
+               macro avg      0.948     0.825     0.839    504329
+            weighted avg      0.982     0.979     0.979    504329
+
+Macro-F1:                  0.8386
+BENIGN false-positive rate: 1.7587%
+Attack detection rate:     96.1650%
+Epoch 1/20

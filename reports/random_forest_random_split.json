@@ -1,0 +1,75 @@
+{
+  "model": "Random Forest (random split)",
+  "macro_f1": 0.9776646071842934,
+  "benign_false_positive_rate": 0.0005819264149278435,
+  "attack_detection_rate": 0.9969188070373507,
+  "accuracy": 0.9989471158707907,
+  "per_class": {
+    "BENIGN": {
+      "precision": 0.9993751714105148,
+      "recall": 0.9994180735850722,
+      "f1-score": 0.9993966220373665,
+      "support": 419297.0
+    },
+    "Bot": {
+      "precision": 0.9081967213114754,
+      "recall": 0.7102564102564103,
+      "f1-score": 0.7971223021582734,
+      "support": 390.0
+    },
+    "DDoS": {
+      "precision": 0.9999218566851605,
+      "recall": 0.9995703628481037,
+      "f1-score": 0.9997460788718089,
+      "support": 25603.0
+    },
+    "DoS GoldenEye": {
+      "precision": 0.99950884086444,
+      "recall": 0.9893048128342246,
+      "f1-score": 0.9943806498900561,
+      "support": 2057.0
+    },
+    "DoS Hulk": {
+      "precision": 0.9986674005620093,
+      "recall": 0.9971940989297078,
+      "f1-score": 0.9979302059662175,
+      "support": 34570.0
+    },
+    "DoS Slowhttptest": {
+      "precision": 0.9895038167938931,
+      "recall": 0.9913957934990439,
+      "f1-score": 0.9904489016236867,
+      "support": 1046.0
+    },
+    "DoS slowloris": {
+      "precision": 0.9990680335507922,
+      "recall": 0.9953574744661096,
+      "f1-score": 0.9972093023255814,
+      "support": 1077.0
+    },
+    "FTP-Patator": {
+      "precision": 1.0,
+      "recall": 0.9966301600673968,
+      "f1-score": 0.9983122362869198,
+      "support": 1187.0
+    },
+    "PortScan": {
+      "precision": 0.9902870239004693,
+      "recall": 0.999119136754019,
+      "f1-score": 0.9946834749246369,
+      "support": 18164.0
+    },
+    "SSH-Patator": {
+      "precision": 1.0,
+      "recall": 0.9906832298136646,
+      "f1-score": 0.9953198127925117,
+      "support": 644.0
+    },
+    "Web Attack - Brute Force": {
+      "precision": 0.9931506849315068,
+      "recall": 0.9863945578231292,
+      "f1-score": 0.9897610921501706,
+      "support": 294.0
+    }
+  }
+}

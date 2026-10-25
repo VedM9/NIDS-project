@@ -1,0 +1,75 @@
+{
+  "model": "CNN sqrt weights",
+  "macro_f1": 0.6980659297624217,
+  "benign_false_positive_rate": 0.057744271959971095,
+  "attack_detection_rate": 0.9780317997930191,
+  "accuracy": 0.947367690535345,
+  "per_class": {
+    "BENIGN": {
+      "precision": 0.9952941532120931,
+      "recall": 0.9422557280400289,
+      "f1-score": 0.9680490045941808,
+      "support": 419297.0
+    },
+    "Bot": {
+      "precision": 0.16241737488196412,
+      "recall": 0.441025641025641,
+      "f1-score": 0.23740510697032435,
+      "support": 390.0
+    },
+    "DDoS": {
+      "precision": 0.800100043769149,
+      "recall": 0.9995703628481037,
+      "f1-score": 0.8887808435638751,
+      "support": 25603.0
+    },
+    "DoS GoldenEye": {
+      "precision": 0.8640238704177323,
+      "recall": 0.9854156538648517,
+      "f1-score": 0.9207358619123325,
+      "support": 2057.0
+    },
+    "DoS Hulk": {
+      "precision": 0.9422594865589075,
+      "recall": 0.9459936361006653,
+      "f1-score": 0.944122869061882,
+      "support": 34570.0
+    },
+    "DoS Slowhttptest": {
+      "precision": 0.59465737514518,
+      "recall": 0.9789674952198852,
+      "f1-score": 0.7398843930635838,
+      "support": 1046.0
+    },
+    "DoS slowloris": {
+      "precision": 0.5199386503067485,
+      "recall": 0.9442896935933147,
+      "f1-score": 0.6706231454005934,
+      "support": 1077.0
+    },
+    "FTP-Patator": {
+      "precision": 0.9562706270627063,
+      "recall": 0.9764111204717776,
+      "f1-score": 0.9662359316381826,
+      "support": 1187.0
+    },
+    "PortScan": {
+      "precision": 0.6736552544515074,
+      "recall": 0.9976877339792997,
+      "f1-score": 0.8042605125929213,
+      "support": 18164.0
+    },
+    "SSH-Patator": {
+      "precision": 0.16905681191395477,
+      "recall": 0.9518633540372671,
+      "f1-score": 0.28711943793911004,
+      "support": 644.0
+    },
+    "Web Attack - Brute Force": {
+      "precision": 0.14562063406770553,
+      "recall": 0.9217687074829932,
+      "f1-score": 0.25150812064965195,
+      "support": 294.0
+    }
+  }
+}

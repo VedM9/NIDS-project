@@ -8,48 +8,63 @@ Random Forest was chosen as the baseline because it handles unscaled,
 tabular data well, trains quickly, and produces feature importances --
 useful in a security context where an analyst often needs to explain
 *why* something was flagged, not just that it was.
+
+Usage:
+    python train_random_forest.py                  # random split, saves model artifacts
+    python train_random_forest.py --split ordered  # chronological-style split, evaluation only
 """
 
 import time
 import joblib
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
 
-from data_prep import load_and_prepare_data
+from data_prep import load_and_prepare_data, data_dir_arg
+from evaluation import summarize
 
-DATA_DIR = r"C:\Users\mved0\Downloads\MachineLearningCSV\MachineLearningCVE"
 MODEL_DIR = "."  # where to save the trained artifacts
 
 
 def main():
-    X_train, X_test, y_train, y_test, le = load_and_prepare_data(DATA_DIR)
+    parser = data_dir_arg("Train and evaluate the Random Forest baseline")
+    parser.add_argument("--split", choices=["random", "ordered"], default="random")
+    args = parser.parse_args()
 
-    rf = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+    X_train, X_test, y_train, y_test, le = load_and_prepare_data(args.data_dir, split=args.split)
+    print("Train:", X_train.shape, " Test:", X_test.shape)
+
+    # min_samples_leaf stops each tree growing until every leaf holds a
+    # single flow. Fully-grown trees here reached depth 54 and made a
+    # 116 MB model; a leaf minimum keeps it small enough to ship and
+    # explain (SHAP) with little accuracy cost.
+    rf = RandomForestClassifier(
+        n_estimators=100, min_samples_leaf=3, random_state=42, n_jobs=-1
+    )
 
     start = time.time()
     rf.fit(X_train, y_train)
     print(f"Training took {time.time() - start:.1f} seconds")
 
-    y_pred = rf.predict(X_test)
-    print(classification_report(y_test, y_pred, target_names=le.classes_))
+    summarize(y_test, rf.predict(X_test), le, f"Random Forest ({args.split} split)")
 
     # Which features the model actually relies on -- a sanity check against
     # the model exploiting something too convenient (e.g. Destination Port
     # alone), and useful material for a project write-up.
-    importances = rf.feature_importances_
     top_features = sorted(
-        zip(X_train.columns, importances), key=lambda x: x[1], reverse=True
+        zip(X_train.columns, rf.feature_importances_), key=lambda x: x[1], reverse=True
     )[:15]
     print("\nTop 15 features by importance:")
     for name, score in top_features:
         print(f"  {name}: {score:.4f}")
+
+    if args.split != "random":
+        return  # the dashboard model is always the random-split one
 
     # Save everything the dashboard needs to score new data:
     # the model itself, the label encoder (to turn predictions back into
     # class names), the training column order (new data must match it),
     # and the training medians (to fill any infinite/missing values the
     # same way we did during training).
-    joblib.dump(rf, f"{MODEL_DIR}/rf_model.pkl")
+    joblib.dump(rf, f"{MODEL_DIR}/rf_model.pkl", compress=3)
     joblib.dump(le, f"{MODEL_DIR}/label_encoder.pkl")
     joblib.dump(list(X_train.columns), f"{MODEL_DIR}/feature_columns.pkl")
     joblib.dump(X_train.median(), f"{MODEL_DIR}/train_medians.pkl")
@@ -58,13 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-from data_prep import load_and_prepare_data
-
-X_train, X_test, y_train, y_test, le = load_and_prepare_data(
-    r"C:\Users\mved0\Downloads\MachineLearningCSV\MachineLearningCVE"
-)
-
-# Grab 200 random test rows to use as a sample upload for the dashboard
-sample = X_test.sample(200, random_state=1)
-sample.to_csv("sample_flows.csv", index=False)
-print("Saved sample_flows.csv")

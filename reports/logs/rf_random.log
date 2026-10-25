@@ -1,0 +1,44 @@
+Train: (2017313, 65)  Test: (504329, 65)
+Training took 117.6 seconds
+
+--- Random Forest (random split) ---
+                          precision    recall  f1-score   support
+
+                  BENIGN      0.999     0.999     0.999    419297
+                     Bot      0.908     0.710     0.797       390
+                    DDoS      1.000     1.000     1.000     25603
+           DoS GoldenEye      1.000     0.989     0.994      2057
+                DoS Hulk      0.999     0.997     0.998     34570
+        DoS Slowhttptest      0.990     0.991     0.990      1046
+           DoS slowloris      0.999     0.995     0.997      1077
+             FTP-Patator      1.000     0.997     0.998      1187
+                PortScan      0.990     0.999     0.995     18164
+             SSH-Patator      1.000     0.991     0.995       644
+Web Attack - Brute Force      0.993     0.986     0.990       294
+
+                accuracy                          0.999    504329
+               macro avg      0.989     0.969     0.978    504329
+            weighted avg      0.999     0.999     0.999    504329
+
+Macro-F1:                  0.9777
+BENIGN false-positive rate: 0.0582%
+Attack detection rate:     99.6919%
+
+Top 15 features by importance:
+  Packet Length Variance: 0.0688
+  Packet Length Std: 0.0667
+  Bwd Packet Length Std: 0.0526
+  Total Length of Bwd Packets: 0.0421
+  Average Packet Size: 0.0387
+  Subflow Fwd Bytes: 0.0380
+  Packet Length Mean: 0.0380
+  Avg Bwd Segment Size: 0.0375
+  Total Length of Fwd Packets: 0.0371
+  Bwd Packet Length Mean: 0.0356
+  Bwd Packet Length Max: 0.0330
+  Max Packet Length: 0.0307
+  Subflow Bwd Bytes: 0.0267
+  Fwd Packet Length Max: 0.0249
+  Avg Fwd Segment Size: 0.0222
+
+Saved model artifacts to ./
