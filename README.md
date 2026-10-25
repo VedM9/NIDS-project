@@ -173,8 +173,13 @@ and each flow gets:
 `sample_flows.csv` is a ready-made demo upload: 200 random test flows plus
 5 flows from each never-seen attack class. Its `Label` column is shown as
 ground truth but never used as a feature. On this file, the dashboard
-classifies every known-attack flow correctly and flags all 5 Heartbleed
-flows as unknown anomalies, with one false alarm out of 163 benign flows.
+classifies every known-attack flow correctly and raises 8 unknown
+anomalies: all 5 Heartbleed flows, 2 of the 5 Infiltration flows, and 1
+false alarm out of 163 benign flows.
+
+![Dashboard overview](screenshots/dashboard-overview.png)
+
+![Flagged flows with a SHAP explanation](screenshots/dashboard-flagged.png)
 
 ## Limitations
 

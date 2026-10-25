@@ -223,7 +223,9 @@ def main():
                                        detector, explainers)
         left, right = st.columns([1, 1])
         left.dataframe(explanation.style.format("{:.4g}"), use_container_width=True)
-        right.bar_chart(explanation.iloc[:, 1], horizontal=True)
+        # Plain series name: quotes in a chart field name (e.g. "'DDoS'")
+        # can stop the chart from rendering
+        right.bar_chart(explanation.iloc[:, 1].rename("SHAP value"), horizontal=True)
         st.caption("SHAP values: how much each feature's value moved the model's "
                    "output towards this verdict for this specific flow. Negative "
                    "bars pushed against it.")
